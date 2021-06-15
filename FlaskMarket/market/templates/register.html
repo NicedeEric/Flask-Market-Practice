@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<style>
+    .col-md-3,
+    .col-md-9 {
+        height: 50px;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+</style>
+<body class='text-center'>
+    <div class='container'>
+        <form method="POST" class='form-register' style='color: #fff'>
+            {{ form.hidden_tag() }}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+            <br>
+            <div class='row'>
+                <div class='col-md-3'>
+                {{form.username.label()}}
+                </div>
+                <div class='col-md-9'>
+                {{form.username(class='form-control', placeholder='User Name')}}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>
+                {{form.email_address.label()}}
+                </div>
+                <div class='col-md-9'>
+                {{form.email_address(class='form-control', placeholder='Email Address')}}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>
+                {{form.password1.label()}}
+                </div>
+                <div class='col-md-9'>
+                {{form.password1(class='form-control', placeholder='Passowrd')}}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-3'>
+                {{form.password2.label()}}
+                </div>
+                <div class='col-md-9'>
+                {{form.password2(class='form-control', placeholder='Retype your password')}}
+                </div>
+            </div>
+            <br>
+            {{form.submit(class="btn btn-lg btn-primary")}}
+            <br>
+            <br>
+            <div class='checkbox mb-3'>
+                <h6>Already have an account?</h6>
+                <a class='btn btn-secondary btn-sm' href="{{ url_for('login_page') }}">Log in</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}
